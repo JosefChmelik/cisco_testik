@@ -190,3 +190,13 @@ document.getElementById("resetButton").addEventListener("click", () => {
     // Shuffle the dropdown options again when resetting
     shuffleDropdowns();
 });
+
+// Ensure the radio button is toggled when clicking on the li
+document.querySelectorAll('.question li').forEach(li => {
+    li.addEventListener('click', function() {
+        const radioButton = this.querySelector('input[type="radio"]');
+        if (radioButton) {
+            radioButton.checked = true;  // Set the radio button to checked
+        }
+    });
+});
