@@ -191,12 +191,31 @@ document.getElementById("resetButton").addEventListener("click", () => {
     shuffleDropdowns();
 });
 
-// Ensure the radio button is toggled when clicking on the li
+// Ensure radio button toggles when clicking on li, and unchecks if already checked
 document.querySelectorAll('.question li').forEach(li => {
     li.addEventListener('click', function() {
         const radioButton = this.querySelector('input[type="radio"]');
         if (radioButton) {
-            radioButton.checked = true;  // Set the radio button to checked
+            if (radioButton.checked) {
+                radioButton.checked = false;  // Uncheck if already checked
+            } else {
+                radioButton.checked = true;  // Check if not already checked
+            }
         }
     });
+});
+
+// Function to shuffle the order of the questions
+document.getElementById('shuffleBtn').addEventListener('click', function() {
+    const questionsContainer = document.querySelector('.quiz-container');  // Adjust to the container wrapping the questions
+    const questions = Array.from(questionsContainer.children); // All .question divs within the container
+
+    // Shuffle the questions array using Fisher-Yates algorithm
+    for (let i = questions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [questions[i], questions[j]] = [questions[j], questions[i]]; // Swap elements
+    }
+
+    // Append the shuffled questions back to the container
+    questions.forEach(q => questionsContainer.appendChild(q));
 });
