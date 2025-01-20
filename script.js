@@ -180,13 +180,9 @@ document.getElementById("resetButton").addEventListener("click", () => {
     const form = document.forms["quizForm"];
     form.reset();
 
-    document.querySelectorAll(".question li").forEach((li) => {
-        li.classList.remove("correct", "incorrect");
-    });
-
-    document.querySelectorAll("select").forEach((select) => {
-        select.classList.remove("correct", "incorrect");
-    });
+    document.querySelectorAll('.correct, .incorrect').forEach((element) => {
+        element.classList.remove('correct', 'incorrect');
+    });XMLDocument
 
     window.scrollTo(0, 0);
     document.getElementById("result").textContent = "";
