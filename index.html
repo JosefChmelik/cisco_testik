@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .correct {
+        background-color: green;
+        color: white;
+        }
+
+        .incorrect {
+            background-color: red;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Cybersecurity Quiz</h1>
+    <div id="result"></div>
+    <form id="quizForm">
+        <div class="question" id="q1">
+            <h3>1. What principle prevents the disclosure of information to unauthorized people, resources, and processes?</h3>
+            <ul>
+                <li><input type="radio" name="q1" value="confidentiality"> Confidentiality</li>
+                <li><input type="radio" name="q1" value="integrity"> Integrity</li>
+                <li><input type="radio" name="q1" value="accounting"> Accounting</li>
+                <li><input type="radio" name="q1" value="availability"> Availability</li>
+                <li><input type="radio" name="q1" value="nonrepudiation"> Nonrepudiation</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q2">
+            <h3>2. What benefits does patch management provide? (Choose three)</h3>
+            <ul>
+                <li><input type="checkbox" name="q2" value="Administrators"> Administrators can approve or deny patches</li>
+                <li><input type="checkbox" name="q2" value="Updates"> Updates can be forced on systems immediately</li>
+                <li><input type="checkbox" name="q2" value="Patches"> Patches can be chosen by the user</li>
+                <li><input type="checkbox" name="q2" value="Internet"> Computers require a connection to the Internet to receive patches</li>
+                <li><input type="checkbox" name="q2" value="Circumvented"> Updates cannot be circumvented</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q3">
+            <h3>3. What are two advantages of the NTFS file system compared with FAT32? (Choose two)</h3>
+            <ul>
+                <li><input type="checkbox" name="q3" value="USB"> NTFS allows faster access to external peripherals such as a USB drive</li>
+                <li><input type="checkbox" name="q3" value="Larger files"> NTFS supports larger files</li>
+                <li><input type="checkbox" name="q3" value="Security"> NTFS provides more security features</li>
+                <li><input type="checkbox" name="q3" value="Formatting"> NTFS allows faster formatting of drives</li>
+                <li><input type="checkbox" name="q3" value="Configure"> NTFS is easier to configure</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q4">
+            <h3>4. What are three access control security services? (Choose three)</h3>
+            <ul>
+                <li><input type="checkbox" name="q4" value="Authentication"> Authentication</li>
+                <li><input type="checkbox" name="q4" value="Authorization"> Authorization</li>
+                <li><input type="checkbox" name="q4" value="Accounting"> Accounting</li>
+                <li><input type="checkbox" name="q4" value="Access"> Access</li>
+                <li><input type="checkbox" name="q4" value="Repudiation"> Repudiation</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q5">
+            <h3>5. What three tasks are accomplished by a comprehensive security policy? (Choose three)</h3>
+            <ul>
+                <li><input type="checkbox" name="q5" value="Binding"> Is not legally binding</li>
+                <li><input type="checkbox" name="q5" value="Backing"> Gives security staff the backing of management</li>
+                <li><input type="checkbox" name="q5" value="Vagueness"> Vagueness</li>
+                <li><input type="checkbox" name="q5" value="Consequences"> Defines legal consequences of violations</li>
+                <li><input type="checkbox" name="q5" value="Rules"> Sets rules for expected behavior</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q6">
+            <h3>6. In the Linux shell, which character is used between two commands to instruct the shell to combine and execute these two commands in sequence?</h3>
+            <ul>
+                <li><input type="radio" name="q6" value="$"> $</li>
+                <li><input type="radio" name="q6" value="#"> #</li>
+                <li><input type="radio" name="q6" value="%"> %</li>
+                <li><input type="radio" name="q6" value="|"> |</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q7">
+            <h3>7. A PC user issues the netstat command without any options. What is displayed as the result of this command?</h3>
+            <ul>
+                <li><input type="radio" name="q7" value="a list of all established active TCP connections"> A list of all established active TCP connections</li>
+                <li><input type="radio" name="q7" value="a local routing table"> A local routing table</li>
+                <li><input type="radio" name="q7" value="a historical list of successful pings"> A historical list of successful pings that have been sent</li>
+                <li><input type="radio" name="q7" value="a network connection and usage report"> A network connection and usage report</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q8">
+            <h3>8. Why would a network administrator choose Linux as an operating system in the Security Operations Center (SOC)?</h3>
+            <ul>
+                <li><input type="radio" name="q8" value="More network applications are created for this environment."> More network applications are created for this environment</li>
+                <li><input type="radio" name="q8" value="It is easier to use than other operating systems."> It is easier to use than other operating systems</li>
+                <li><input type="radio" name="q8" value="The administrator has more control over the operating system."> The administrator has more control over the operating system</li>
+                <li><input type="radio" name="q8" value="It is more secure than other server operating systems."> It is more secure than other server operating systems</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q9">
+            <h3>9. What are three states of data during which data is vulnerable? (Choose three)</h3>
+            <ul>
+                <li><input type="checkbox" name="q9" value="data in-transit"> Data in-transit</li>
+                <li><input type="checkbox" name="q9" value="data decrypted"> Data decrypted</li>
+                <li><input type="checkbox" name="q9" value="data in-process"> Data in-process</li>
+                <li><input type="checkbox" name="q9" value="data encrypted"> Data encrypted</li>
+                <li><input type="checkbox" name="q9" value="purged data"> Purged data</li>
+                <li><input type="checkbox" name="q9" value="stored data"> Stored data</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q10">
+            <h3>10. Which two options are window managers for Linux? (Choose two)</h3>
+            <ul>
+                <li><input type="checkbox" name="q10" value="PenTesting"> PenTesting</li>
+                <li><input type="checkbox" name="q10" value="KDE"> KDE</li>
+                <li><input type="checkbox" name="q10" value="File Explorer"> File Explorer</li>
+                <li><input type="checkbox" name="q10" value="Kali"> Kali</li>
+                <li><input type="checkbox" name="q10" value="Gnome"> Gnome</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q11">
+            <h3>11. What term describes a set of software tools designed to increase the privileges of a user or to grant access to the user to portions of the operating system that should not normally be allowed?</h3>
+            <ul>
+                <li><input type="radio" name="q11" value="package manager"> Package manager</li>
+                <li><input type="radio" name="q11" value="rootkit"> Rootkit</li>
+                <li><input type="radio" name="q11" value="penetration testing"> Penetration testing</li>
+                <li><input type="radio" name="q11" value="compiler"> Compiler</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q12">
+            <h3>12. What is the difference between an HIDS and a firewall?</h3>
+            <ul>
+                <li><input type="radio" name="q12" value="An HIDS blocks intrusions, whereas a firewall filters them."> An HIDS blocks intrusions, whereas a firewall filters them</li>
+                <li><input type="radio" name="q12" value="An HIDS monitors operating systems on host computers and processes file system activity. Firewalls allow or deny traffic between the computer and other systems."> An HIDS monitors operating systems on host computers and processes file system activity. Firewalls allow or deny traffic between the computer and other systems</li>
+                <li><input type="radio" name="q12" value="A firewall allows and denies traffic based on rules and an HIDS monitors network traffic."> A firewall allows and denies traffic based on rules and an HIDS monitors network traffic</li>
+                <li><input type="radio" name="q12" value="A firewall performs packet filtering and therefore is limited in effectiveness, whereas an HIDS blocks intrusions."> A firewall performs packet filtering and therefore is limited in effectiveness, whereas an HIDS blocks intrusions</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q13">
+            <h3>13. Consider the result of the ls -l command in the Linux output below. What are the file permissions assigned to the sales user for the analyst.txt file?</h3>
+            <pre>ls -l analyst.txt
+-rwxrw-r-- sales staff 1028 May 28 15:50 analyst.txt</pre>
+            <ul>
+                <li><input type="radio" name="q13" value="read, write, execute"> Read, write, execute</li>
+                <li><input type="radio" name="q13" value="read only"> Read only</li>
+                <li><input type="radio" name="q13" value="read, write"> Read, write</li>
+                <li><input type="radio" name="q13" value="write only"> Write only</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q14">
+            <h3>14. Match the Linux commands to their functions:</h3>
+            <ul>
+                <li>
+                    pwd: <select name="q14">
+                        <option value="">Select function</option>
+                        <option value="Displays the name of the current working directory">Displays the name of the current working directory</option>
+                        <option value="Runs a command as another user">Runs a command as another user</option>
+                        <option value="Modifies file permissions">Modifies file permissions</option>
+                        <option value="Lists the processes that are currently running">Lists the processes that are currently running</option>
+                    </select>
+                </li>
+                <li>
+                    sudo: <select name="q14">
+                        <option value="">Select function</option>
+                        <option value="Displays the name of the current working directory">Displays the name of the current working directory</option>
+                        <option value="Runs a command as another user">Runs a command as another user</option>
+                        <option value="Modifies file permissions">Modifies file permissions</option>
+                        <option value="Lists the processes that are currently running">Lists the processes that are currently running</option>
+                    </select>
+                </li>
+                <li>
+                    chmod: <select name="q14">
+                        <option value="">Select function</option>
+                        <option value="Displays the name of the current working directory">Displays the name of the current working directory</option>
+                        <option value="Runs a command as another user">Runs a command as another user</option>
+                        <option value="Modifies file permissions">Modifies file permissions</option>
+                        <option value="Lists the processes that are currently running">Lists the processes that are currently running</option>
+                    </select>
+                </li>
+                <li>
+                    ps: <select name="q14">
+                        <option value="">Select function</option>
+                        <option value="Displays the name of the current working directory">Displays the name of the current working directory</option>
+                        <option value="Runs a command as another user">Runs a command as another user</option>
+                        <option value="Modifies file permissions">Modifies file permissions</option>
+                        <option value="Lists the processes that are currently running">Lists the processes that are currently running</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+
+        <div class="question" id="q15">
+            <h3>15. Which statement describes the term iptables?</h3>
+            <ul>
+                <li><input type="radio" name="q15" value="It is a file used by a DHCP server to store current active IP addresses."> It is a file used by a DHCP server to store current active IP addresses</li>
+                <li><input type="radio" name="q15" value="It is a DHCP application in Windows."> It is a DHCP application in Windows</li>
+                <li><input type="radio" name="q15" value="It is a rule-based firewall application in Linux."> It is a rule-based firewall application in Linux</li>
+                <li><input type="radio" name="q15" value="It is a DNS daemon in Linux."> It is a DNS daemon in Linux</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q16">
+            <h3>16. On a Windows host, which tool can be used to create and maintain blacklists and whitelists?</h3>
+            <ul>
+                <li><input type="radio" name="q16" value="Group Policy Editor"> Group Policy Editor</li>
+                <li><input type="radio" name="q16" value="Local Users and Groups"> Local Users and Groups</li>
+                <li><input type="radio" name="q16" value="Task Manager"> Task Manager</li>
+                <li><input type="radio" name="q16" value="Computer Management"> Computer Management</li>
+            </ul>
+        </div>
+
+        <div class="question" id="q17">
+            <h3>17. Match the network-based anti-malware solutions to their functions:</h3>
+            <ul>
+                <li>
+                    Email security appliance: <select name="q17">
+                        <option value="">Select function</option>
+                        <option value="Provides filtering of SPAM and potentially malicious emails before they reach the endpoint">Provides filtering of SPAM and potentially malicious emails before they reach the endpoint</option>
+                        <option value="Provides filtering of websites and blacklisting before they reach the endpoint">Provides filtering of websites and blacklisting before they reach the endpoint</option>
+                        <option value="Permits only authorized and compliant systems to connect to the network">Permits only authorized and compliant systems to connect to the network</option>
+                        <option value="Provides endpoint protection from viruses and malware">Provides endpoint protection from viruses and malware</option>
+                    </select>
+                </li>
+                <li>
+                    Web security appliance: <select name="q17">
+                        <option value="">Select function</option>
+                        <option value="Provides filtering of SPAM and potentially malicious emails before they reach the endpoint">Provides filtering of SPAM and potentially malicious emails before they reach the endpoint</option>
+                        <option value="Provides filtering of websites and blacklisting before they reach the endpoint">Provides filtering of websites and blacklisting before they reach the endpoint</option>
+                        <option value="Permits only authorized and compliant systems to connect to the network">Permits only authorized and compliant systems to connect to the network</option>
+                        <option value="Provides endpoint protection from viruses and malware">Provides endpoint protection from viruses and malware</option>
+                    </select>
+                </li>
+                <li>
+                    Network admission control: <select name="q17">
+                        <option value="">Select function</option>
+                        <option value="Provides filtering of SPAM and potentially malicious emails before they reach the endpoint">Provides filtering of SPAM and potentially malicious emails before they reach the endpoint</option>
+                        <option value="Provides filtering of websites and blacklisting before they reach the endpoint">Provides filtering of websites and blacklisting before they reach the endpoint</option>
+                        <option value="Permits only authorized and compliant systems to connect to the network">Permits only authorized and compliant systems to connect to the network</option>
+                        <option value="Provides endpoint protection from viruses and malware">Provides endpoint protection from viruses and malware</option>
+                    </select>
+                </li>
+                <li>
+                    Advanced malware protection: <select name="q17">
+                        <option value="">Select function</option>
+                        <option value="Provides filtering of SPAM and potentially malicious emails before they reach the endpoint">Provides filtering of SPAM and potentially malicious emails before they reach the endpoint</option>
+                        <option value="Provides filtering of websites and blacklisting before they reach the endpoint">Provides filtering of websites and blacklisting before they reach the endpoint</option>
+                        <option value="Permits only authorized and compliant systems to connect to the network">Permits only authorized and compliant systems to connect to the network</option>
+                        <option value="Provides endpoint protection from viruses and malware">Provides endpoint protection from viruses and malware</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q18">
+            <h3>18. Match typical Linux log files to their functions:</h3>
+            <ul>
+                <li>
+                    /var/log/secure: <select name="q18">
+                        <option value="">Select function</option>
+                        <option value="Used by RedHat and CentOS computers and tracks authentication-related events">Used by RedHat and CentOS computers and tracks authentication-related events</option>
+                        <option value="Contains generic computer activity logs, and is used to store informational and noncritical system messages">Contains generic computer activity logs, and is used to store informational and noncritical system messages</option>
+                        <option value="Stores information related to hardware devices and their drivers">Stores information related to hardware devices and their drivers</option>
+                        <option value="Used by Debian and Ubuntu computers and stores all authentication-related events">Used by Debian and Ubuntu computers and stores all authentication-related events</option>
+                    </select>
+                </li>
+                <li>
+                    /var/log/messages: <select name="q18">
+                        <option value="">Select function</option>
+                        <option value="Used by RedHat and CentOS computers and tracks authentication-related events">Used by RedHat and CentOS computers and tracks authentication-related events</option>
+                        <option value="Contains generic computer activity logs, and is used to store informational and noncritical system messages">Contains generic computer activity logs, and is used to store informational and noncritical system messages</option>
+                        <option value="Stores information related to hardware devices and their drivers">Stores information related to hardware devices and their drivers</option>
+                        <option value="Used by Debian and Ubuntu computers and stores all authentication-related events">Used by Debian and Ubuntu computers and stores all authentication-related events</option>
+                    </select>
+                </li>
+                <li>
+                    /var/log/dmesg: <select name="q18">
+                        <option value="">Select function</option>
+                        <option value="Used by RedHat and CentOS computers and tracks authentication-related events">Used by RedHat and CentOS computers and tracks authentication-related events</option>
+                        <option value="Contains generic computer activity logs, and is used to store informational and noncritical system messages">Contains generic computer activity logs, and is used to store informational and noncritical system messages</option>
+                        <option value="Stores information related to hardware devices and their drivers">Stores information related to hardware devices and their drivers</option>
+                        <option value="Used by Debian and Ubuntu computers and stores all authentication-related events">Used by Debian and Ubuntu computers and stores all authentication-related events</option>
+                    </select>
+                </li>
+                <li>
+                    /var/log/auth.log: <select name="q18">
+                        <option value="">Select function</option>
+                        <option value="Used by RedHat and CentOS computers and tracks authentication-related events">Used by RedHat and CentOS computers and tracks authentication-related events</option>
+                        <option value="Contains generic computer activity logs, and is used to store informational and noncritical system messages">Contains generic computer activity logs, and is used to store informational and noncritical system messages</option>
+                        <option value="Stores information related to hardware devices and their drivers">Stores information related to hardware devices and their drivers</option>
+                        <option value="Used by Debian and Ubuntu computers and stores all authentication-related events">Used by Debian and Ubuntu computers and stores all authentication-related events</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q19">
+            <h3>19. Match the antimalware approach to the description:</h3>
+            <ul>
+                <li>
+                    Signature-based: <select name="q19">
+                        <option value="">Select description</option>
+                        <option value="Recognizes characteristics of known malware files">Recognizes characteristics of known malware files</option>
+                        <option value="Recognizes general features shared by types of malware">Recognizes general features shared by types of malware</option>
+                        <option value="Recognizes malware through analysis of suspicious actions">Recognizes malware through analysis of suspicious actions</option>
+                    </select>
+                </li>
+                <li>
+                    Heuristics-based: <select name="q19">
+                        <option value="">Select description</option>
+                        <option value="Recognizes characteristics of known malware files">Recognizes characteristics of known malware files</option>
+                        <option value="Recognizes general features shared by types of malware">Recognizes general features shared by types of malware</option>
+                        <option value="Recognizes malware through analysis of suspicious actions">Recognizes malware through analysis of suspicious actions</option>
+                    </select>
+                </li>
+                <li>
+                    Behavior-based: <select name="q19">
+                        <option value="">Select description</option>
+                        <option value="Recognizes characteristics of known malware files">Recognizes characteristics of known malware files</option>
+                        <option value="Recognizes general features shared by types of malware">Recognizes general features shared by types of malware</option>
+                        <option value="Recognizes malware through analysis of suspicious actions">Recognizes malware through analysis of suspicious actions</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q20">
+            <h3>20. A client device has initiated a secure HTTP request to a web browser. Which well-known port address number is associated with the destination address?</h3>
+            <ul>
+                <li><input type="radio" name="q20" value="80"> 80</li>
+                <li><input type="radio" name="q20" value="404"> 404</li>
+                <li><input type="radio" name="q20" value="443"> 443</li>
+                <li><input type="radio" name="q20" value="110"> 110</li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q21">
+            <h3>21. Which statement describes the Cisco Threat Grid Glovebox?</h3>
+            <ul>
+                <li><input type="radio" name="q21" value="It is a host-based intrusion detection system (HIDS) solution to fight against malware."> It is a host-based intrusion detection system (HIDS) solution to fight against malware</li>
+                <li><input type="radio" name="q21" value="It is a firewall appliance."> It is a firewall appliance</li>
+                <li><input type="radio" name="q21" value="It is a sandbox product for analyzing malware behaviors."> It is a sandbox product for analyzing malware behaviors</li>
+                <li><input type="radio" name="q21" value="It is a network-based IDS/IPS."> It is a network-based IDS/IPS</li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q22">
+            <h3>22. Why is Kali Linux a popular choice in testing the network security of an organization?</h3>
+            <ul>
+                <li><input type="radio" name="q22" value="It is a network scanning tool that prioritizes security risks."> It is a network scanning tool that prioritizes security risks</li>
+                <li><input type="radio" name="q22" value="It can be used to test weaknesses by using only malicious software."> It can be used to test weaknesses by using only malicious software</li>
+                <li><input type="radio" name="q22" value="It is an open source Linux security distribution containing many penetration tools."> It is an open source Linux security distribution containing many penetration tools</li>
+                <li><input type="radio" name="q22" value="It can be used to intercept and log network traffic."> It can be used to intercept and log network traffic</li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q23">
+            <h3>23. Match the Windows system tool with the description:</h3>
+            <ul>
+                <li>
+                    Registry: <select name="q23">
+                        <option value="">Select description</option>
+                        <option value="A hierarchical database of all system and user information">A hierarchical database of all system and user information</option>
+                        <option value="Selectively denies traffic on specified interfaces">Selectively denies traffic on specified interfaces</option>
+                        <option value="A CLI environment used to run scripts and automate tasks">A CLI environment used to run scripts and automate tasks</option>
+                        <option value="Maintains system logs">Maintains system logs</option>
+                    </select>
+                </li>
+                <li>
+                    Windows Firewall: <select name="q23">
+                        <option value="">Select description</option>
+                        <option value="A hierarchical database of all system and user information">A hierarchical database of all system and user information</option>
+                        <option value="Selectively denies traffic on specified interfaces">Selectively denies traffic on specified interfaces</option>
+                        <option value="A CLI environment used to run scripts and automate tasks">A CLI environment used to run scripts and automate tasks</option>
+                        <option value="Maintains system logs">Maintains system logs</option>
+                    </select>
+                </li>
+                <li>
+                    PowerShell: <select name="q23">
+                        <option value="">Select description</option>
+                        <option value="A hierarchical database of all system and user information">A hierarchical database of all system and user information</option>
+                        <option value="Selectively denies traffic on specified interfaces">Selectively denies traffic on specified interfaces</option>
+                        <option value="A CLI environment used to run scripts and automate tasks">A CLI environment used to run scripts and automate tasks</option>
+                        <option value="Maintains system logs">Maintains system logs</option>
+                    </select>
+                </li>
+                <li>
+                    Event Viewer: <select name="q23">
+                        <option value="">Select description</option>
+                        <option value="A hierarchical database of all system and user information">A hierarchical database of all system and user information</option>
+                        <option value="Selectively denies traffic on specified interfaces">Selectively denies traffic on specified interfaces</option>
+                        <option value="A CLI environment used to run scripts and automate tasks">A CLI environment used to run scripts and automate tasks</option>
+                        <option value="Maintains system logs">Maintains system logs</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q24">
+            <h3>24. What three methods help to ensure system availability? (Choose three)</h3>
+            <ul>
+                <li><input type="checkbox" name="q24" value="system backups"> System backups</li>
+                <li><input type="checkbox" name="q24" value="system resiliency"> System resiliency</li>
+                <li><input type="checkbox" name="q24" value="equipment maintenance"> Equipment maintenance</li>
+                <li><input type="checkbox" name="q24" value="fire extinguishers"> Fire extinguishers</li>
+                <li><input type="checkbox" name="q24" value="up-to-date operating systems"> Up-to-date operating systems</li>
+                <li><input type="checkbox" name="q24" value="integrity checking"> Integrity checking</li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q25">
+            <h3>25. What would be a reason for a computer user to use the Task Manager Performance tab?</h3>
+            <ul>
+                <li><input type="radio" name="q25" value="to check the CPU usage of the PC"> To check the CPU usage of the PC</li>
+                <li><input type="radio" name="q25" value="to increase the performance of the CPU"> To increase the performance of the CPU</li>
+                <li><input type="radio" name="q25" value="to view the services that are currently running on the PC"> To view the services that are currently running on the PC</li>
+                <li><input type="radio" name="q25" value="to view the processes that are running and end a process if needed"> To view the processes that are running and end a process if needed</li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q26">
+            <h3>26. What is the function of the kernel of an operating system?</h3>
+            <ul>
+                <li><input type="radio" name="q26" value="It provides a user interface that allows users to request a specific task."> It provides a user interface that allows users to request a specific task</li>
+                <li><input type="radio" name="q26" value="It is an application that allows the initial configuration of a Cisco device."> It is an application that allows the initial configuration of a Cisco device</li>
+                <li><input type="radio" name="q26" value="The kernel provisions hardware resources to meet software requirements."> The kernel provisions hardware resources to meet software requirements</li>
+                <li><input type="radio" name="q26" value="The kernel links the hardware drivers with the underlying electronics of a computer."> The kernel links the hardware drivers with the underlying electronics of a computer</li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q27">
+            <h3>27. A security specialist is asked for advice on a security measure to prevent unauthorized hosts from accessing the home network of employees. Which measure would be most effective?</h3>
+            <ul>
+                <li><input type="radio" name="q27" value="Implement intrusion detection systems."> Implement intrusion detection systems</li>
+                <li><input type="radio" name="q27" value="Implement a firewall."> Implement a firewall</li>
+                <li><input type="radio" name="q27" value="Implement RAID."> Implement RAID</li>
+                <li><input type="radio" name="q27" value="Implement a VLAN."> Implement a VLAN</li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q28">
+            <h3>28. Match the Windows commands to their descriptions:</h3>
+            <ul>
+                <li>
+                    dir: <select name="q28">
+                        <option value="">Select description</option>
+                        <option value="lists files in a directory">Lists files in a directory</option>
+                        <option value="creates a new directory">Creates a new directory</option>
+                        <option value="changes the current directory">Changes the current directory</option>
+                        <option value="renames a file">Renames a file</option>
+                    </select>
+                </li>
+                <li>
+                    mkdir: <select name="q28">
+                        <option value="">Select description</option>
+                        <option value="lists files in a directory">Lists files in a directory</option>
+                        <option value="creates a new directory">Creates a new directory</option>
+                        <option value="changes the current directory">Changes the current directory</option>
+                        <option value="renames a file">Renames a file</option>
+                    </select>
+                </li>
+                <li>
+                    cd: <select name="q28">
+                        <option value="">Select description</option>
+                        <option value="lists files in a directory">Lists files in a directory</option>
+                        <option value="creates a new directory">Creates a new directory</option>
+                        <option value="changes the current directory">Changes the current directory</option>
+                        <option value="renames a file">Renames a file</option>
+                    </select>
+                </li>
+                <li>
+                    ren: <select name="q28">
+                        <option value="">Select description</option>
+                        <option value="lists files in a directory">Lists files in a directory</option>
+                        <option value="creates a new directory">Creates a new directory</option>
+                        <option value="changes the current directory">Changes the current directory</option>
+                        <option value="renames a file">Renames a file</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q29">
+            <h3>29. A user creates a file with .ps1 extension in Windows. What type of file is it?</h3>
+            <ul>
+                <li><input type="radio" name="q29" value="PowerShell cmdlet"> PowerShell cmdlet</li>
+                <li><input type="radio" name="q29" value="PowerShell function"> PowerShell function</li>
+                <li><input type="radio" name="q29" value="PowerShell script"> PowerShell script</li>
+                <li><input type="radio" name="q29" value="PowerShell documentation"> PowerShell documentation</li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q30">
+            <h3>30. Which statement describes the policy-based intrusion detection approach?</h3>
+            <ul>
+                <li><input type="radio" name="q30" value="It compares the signatures of incoming traffic to a known intrusion database."> It compares the signatures of incoming traffic to a known intrusion database</li>
+                <li><input type="radio" name="q30" value="It compares the operations of a host against well-defined security rules."> It compares the operations of a host against well-defined security rules</li>
+                <li><input type="radio" name="q30" value="It compares the antimalware definitions to a central repository for the latest updates."> It compares the antimalware definitions to a central repository for the latest updates</li>
+                <li><input type="radio" name="q30" value="It compares the behaviors of a host to an established baseline to identify potential intrusion."> It compares the behaviors of a host to an established baseline to identify potential intrusion</li>
+            </ul>
+        </div>
+        
+        <button id="submitButton" type="button">Submit Quiz</button>
+        <button id="resetButton" type="button">Reset Quiz</button>
+        <script src="script.js"></script>
+        </form>
